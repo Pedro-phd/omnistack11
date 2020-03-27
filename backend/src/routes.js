@@ -1,12 +1,11 @@
-const express = require('express')
-const routes = express.Router()
+const express = require('express');
+const ongController = require('./controllers/ongController')
+const routes = express.Router();
 
 
-routes.post('/', (req,res)=>{
-    const body = req.body
-    console.log(body)
-    return res.send('true')
-})
+routes.get('/ongs', ongController.index)
+
+routes.post('/ongs', ongController.create)
 
 
 module.exports = routes;
